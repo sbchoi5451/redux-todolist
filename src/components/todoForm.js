@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { deleteTodo, doneTodo, cancelTodo } from '../redux/modules/todoReducer'
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
-import confetti from "https://esm.run/canvas-confetti@1";
 
 function TodoForm() {
 
@@ -25,13 +24,7 @@ function TodoForm() {
                             <ContentText>{todo.body}</ContentText>
                             <ButtonStyle3>
                                 <ButtonStyle onClick={() => dispatch(deleteTodo(todo.id))}>삭제하기</ButtonStyle>
-                                <ButtonStyle2 onClick={() => {
-                                    dispatch(doneTodo(todo.id))
-                                    confetti({
-                                        particleCount: 120,
-                                        spread: 200,
-                                    });
-                                }}>완료</ButtonStyle2>
+                                <ButtonStyle2 onClick={() => {dispatch(doneTodo(todo.id))}}>완료</ButtonStyle2>
                             </ButtonStyle3>
                         </Boxstyle>
                     ))}
