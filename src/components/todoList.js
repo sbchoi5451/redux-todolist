@@ -37,17 +37,19 @@ function TodoList() {
     <form onSubmit={onSubmitHandler}>
       <Inputcontainer>
         <Content>
+          
           제목&nbsp;
-          <input
+          <Input
             type='text'
             name='title'
             value={title}
             onChange={titleHandler}
             required
           />
-
+          
+          
           내용&nbsp;
-          <input
+          <Input
             type='text'
             name='body'
             value={body}
@@ -67,7 +69,7 @@ export default TodoList
 const Inputcontainer = styled.div`
   display: flex;
   align-items: center;
-  height: 45px;
+  height: 50px;
   margin-top: 20px;
   padding: 10px;
   border-radius: 10px;
@@ -76,10 +78,36 @@ const Inputcontainer = styled.div`
   font-weight: bold;`
 
 const Content = styled.div`
-  display: flex;`
+  display: flex;
+  `
 
 const Button = styled.button`
-  margin-left: 10px;
-  background-color: transparent;
+border: 2px solid #616161;
+width: 120px;
+height: 35px;
+border-radius: 10px;
+margin-left: 480px;
+background-color: transparent;
+padding: 5px;
+justify-content: center;
+text-align: center;
+display: flex;
+font-size: 15px;
+&:hover {
+        background-color: #212121;
+        cursor: pointer;
+        border: 2px solid transparent;
+        color: white;
+    }`
+
+const Input = styled.input`
+  width: 200px;
+  height: 22px;
   border-radius: 10px;
-  padding: 4px 4px 4px 4px;`
+  border: 2px solid #616161;
+  margin-left: 5px;
+  margin-right: 20px;
+  padding: 2px;
+  &:focus {
+    outline: none;
+  }`

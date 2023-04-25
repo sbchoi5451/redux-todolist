@@ -14,10 +14,8 @@ function Detail() {
 
   return (
     <Container>
+      <Linkstyle to="/">이전으로</Linkstyle>
       <Id>ID: {foundData.id}</Id>
-      <LinkWrapper>
-      <Link to="/">이전으로</Link>
-      </LinkWrapper>
       <Title>{foundData.title}</Title>
       <p>{foundData.body}</p>
     </Container>
@@ -33,25 +31,31 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     margin: 250px auto;
+    vertical-align: top;
 `
 
 const Id = styled.div`
   text-align: left;
-  margin-left: 50px;
-  margin-bottom: 0;
+  margin: 20px auto 20px 20px;
   width: 100px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 `
 
-const LinkWrapper = styled.div`
-  text-align: right;
-  margin-right: 50px;
-  width: 100%;
-`
+const Linkstyle = styled(Link)`
+    text-decoration: none;
+    color: #616161;
+    font-size: 15px;
+    margin: 20px 20px 20px auto;
+    vertical-align: top;
+    ;
+
+    &:hover {
+        color: black;
+    }
+    `
 
 const Title = styled.h2`
   margin-bottom: 0;
